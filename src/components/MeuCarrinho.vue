@@ -27,12 +27,7 @@ function formatarPreco(preco) {
               <div>
                 <p>
                   Quantidade:
-                  <input
-                    type="number"
-                    v-model="item.quantidade"
-                    @change="atualizaQuantidadeItem(item)"
-                    min="1"
-                  />
+                  <input type="number" v-model="item.quantidade" @change="atualizaQuantidadeItem(item)" min="1" />
                 </p>
                 <button @click="removerItemCarrinho(item)">&#128465;</button>
                 <p>Total: {{ formatarPreco(item.total) }}</p>
@@ -51,6 +46,10 @@ function formatarPreco(preco) {
 </template>
 
 <style scoped>
+.carrinho {
+  text-align: center;
+}
+
 .wrap-carrinho .carrinho-total {
   position: fixed;
   bottom: 3%;
@@ -62,14 +61,17 @@ function formatarPreco(preco) {
   display: flex;
   margin-bottom: 10px;
 }
+
 .detalhes-livro {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
+
 .detalhes-livro p {
   margin: 0;
 }
+
 .detalhes-livro div {
   display: flex;
   justify-content: space-between;
@@ -98,6 +100,7 @@ function formatarPreco(preco) {
 .info-livro-preco {
   margin-left: auto;
 }
+
 .icon-capa-livro {
   width: 30px;
   margin-right: 10px;
